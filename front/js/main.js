@@ -13,7 +13,6 @@ function escaparHTML(texto) {
   return div.innerHTML;
 }
 
-// ---------- Página Servicios ----------
 async function cargarServicios() {
   const contenedor = document.getElementById('listaServicios');
   if (!contenedor) return;
@@ -42,7 +41,6 @@ async function cargarServicios() {
   }
 }
 
-// ---------- Página Contacto ----------
 async function cargarSelectServicios() {
   const select = document.getElementById('id_servicio');
   if (!select) return;
@@ -151,8 +149,6 @@ function iniciarFormulario() {
   });
 }
 
-// ---------- Animaciones de aparición al hacer scroll ----------
-// Las clases las agrega este script: si no carga, el contenido se ve igual (sin animar).
 function activarAnimaciones() {
   const sinAnimacion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (sinAnimacion || !('IntersectionObserver' in window)) return;
@@ -163,7 +159,7 @@ function activarAnimaciones() {
       const el = entrada.target;
       el.classList.add('visible');
       observador.unobserve(el);
-      // Al terminar se limpian las clases para no interferir con el efecto hover
+  
       setTimeout(() => {
         el.classList.remove('reveal', 'visible');
         el.style.transitionDelay = '';

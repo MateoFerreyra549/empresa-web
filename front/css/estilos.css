@@ -22,7 +22,6 @@ body {
 h1, h2, h3 { color: var(--color-primario); margin-bottom: 0.75rem; }
 .titulo-seccion { text-align: center; margin-bottom: 2rem; }
 
-/* ---------- Header y menú ---------- */
 .header { background: #fff; border-bottom: 3px solid var(--color-primario); box-shadow: 0 2px 8px rgba(41, 50, 61, 0.12); }
 .nav {
   max-width: 1100px; margin: 0 auto; padding: 0.75rem 1rem;
@@ -39,7 +38,6 @@ h1, h2, h3 { color: var(--color-primario); margin-bottom: 0.75rem; }
 .nav-links a:hover, .nav-links a.activo { color: var(--color-primario); border-bottom: 2px solid var(--color-primario); }
 .nav-toggle { display: none; background: none; border: none; color: var(--color-oscuro); font-size: 1.8rem; cursor: pointer; }
 
-/* ---------- Hero ---------- */
 .hero { background: var(--color-primario); color: #fff; padding: 4.5rem 0; text-align: center; }
 .hero h1 { color: #fff; font-size: 2.6rem; }
 .hero p { max-width: 620px; margin: 0 auto 1.75rem; font-size: 1.1rem; }
@@ -52,7 +50,6 @@ h1, h2, h3 { color: var(--color-primario); margin-bottom: 0.75rem; }
 .page-banner { background: var(--color-primario); color: #fff; padding: 2.5rem 0; text-align: center; }
 .page-banner h1 { color: #fff; margin: 0; }
 
-/* ---------- Botones ---------- */
 .btn {
   display: inline-block; background: #fff; color: var(--color-primario);
   padding: 0.75rem 1.7rem; border-radius: 6px; text-decoration: none;
@@ -63,7 +60,6 @@ h1, h2, h3 { color: var(--color-primario); margin-bottom: 0.75rem; }
 .btn-primario:hover { background: #0f4496; }
 .btn-primario:disabled { opacity: 0.6; cursor: not-allowed; }
 
-/* ---------- Tarjetas de servicios ---------- */
 .grid-servicios {
   display: grid; gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -78,7 +74,6 @@ h1, h2, h3 { color: var(--color-primario); margin-bottom: 0.75rem; }
 .card p { flex-grow: 1; margin-bottom: 1rem; }
 .card .precio { font-weight: bold; color: var(--color-oscuro); }
 
-/* ---------- Formulario ---------- */
 .formulario {
   max-width: 600px; margin: 0 auto; background: #fff;
   padding: 2rem; border-radius: 10px;
@@ -100,34 +95,28 @@ h1, h2, h3 { color: var(--color-primario); margin-bottom: 0.75rem; }
 .mensaje.ok { background: #e3f6e8; color: #1e6b34; }
 .mensaje.error { background: #fdeaea; color: #a93226; }
 
-/* ---------- Footer ---------- */
 .footer { background: var(--color-oscuro); color: #d1d5db; text-align: center; padding: 1.5rem 1rem; }
 .footer a { color: var(--color-acento); font-size: 0.85rem; }
 .footer p + p { margin-top: 0.4rem; }
 
-/* ================= PANEL DE ADMINISTRACIÓN ================= */
 
-/* Login */
 .login-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 1rem; background: var(--color-oscuro); }
 .login-box { background: #fff; width: 100%; max-width: 400px; padding: 2rem; border-radius: 10px; }
 .login-box h1 { text-align: center; }
 .login-logo { display: block; width: 100%; max-width: 240px; height: auto; margin: 0 auto 1rem; }
 .login-box .volver { display: block; text-align: center; margin-top: 1rem; color: var(--color-primario); }
 
-/* Barra superior del panel */
 .admin-header { background: #fff; color: var(--color-oscuro); }
 .admin-header .nav span.usuario { margin-right: 1rem; color: var(--color-primario); font-weight: 600; }
 .admin-acciones { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
 .btn-salir { background: transparent; color: var(--color-oscuro); border: 1px solid var(--color-oscuro); padding: 0.45rem 1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; }
 .btn-salir:hover { background: var(--color-oscuro); color: #fff; }
 
-/* Filtros */
 .filtros { display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-end; background: #fff; padding: 1rem; border-radius: 10px; margin-bottom: 1rem; box-shadow: 0 2px 10px rgba(41, 50, 61, 0.1); }
 .filtros .campo { margin-bottom: 0; flex: 1 1 180px; }
 .btn-limpiar { background: #e5e9ef; color: var(--color-oscuro); }
 .btn-limpiar:hover { background: #d3d9e2; }
 
-/* Tabla */
 .tabla-wrap { overflow-x: auto; background: #fff; border-radius: 10px; box-shadow: 0 2px 10px rgba(41, 50, 61, 0.1); }
 table { width: 100%; border-collapse: collapse; min-width: 640px; }
 th, td { padding: 0.8rem 1rem; text-align: left; border-bottom: 1px solid #e5e9ef; }
@@ -138,12 +127,11 @@ tr.no-leida td { font-weight: bold; }
 .vacio { text-align: center; padding: 2rem; color: #6b7280; cursor: default; }
 .contador { margin: 0.5rem 0 1rem; color: #6b7280; }
 
-/* Estado */
 .badge { display: inline-block; padding: 0.15rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: bold; }
 .badge.leida { background: #e3f6e8; color: #1e6b34; }
 .badge.noleida { background: #fff1d6; color: #8a5a00; }
 
-/* Ventana de detalle */
+
 .modal { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.55); display: flex; align-items: center; justify-content: center; padding: 1rem; z-index: 50; }
 .modal[hidden] { display: none; }
 .modal-contenido { background: #fff; width: 100%; max-width: 600px; max-height: 90vh; overflow-y: auto; border-radius: 10px; padding: 1.75rem; position: relative; }
@@ -151,7 +139,6 @@ tr.no-leida td { font-weight: bold; }
 .detalle-fila { margin-bottom: 0.5rem; }
 .detalle-mensaje { background: var(--color-fondo); padding: 1rem; border-radius: 6px; margin: 1rem 0; white-space: pre-wrap; }
 
-/* ---------- Animaciones y detalles ---------- */
 html { scroll-behavior: smooth; }
 .header { position: sticky; top: 0; z-index: 40; }
 
@@ -174,7 +161,6 @@ html { scroll-behavior: smooth; }
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .reveal.visible { opacity: 1; transform: none; }
 
-/* Quien tiene activada la opción de reducir movimiento no ve animaciones */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .hero-texto, .hero-logo { animation: none; }
@@ -182,7 +168,7 @@ html { scroll-behavior: smooth; }
   .btn:hover, .card:hover, .card:hover .icono { transform: none; }
 }
 
-/* ---------- Responsive (va al final para que pise todo lo anterior) ---------- */
+
 @media (max-width: 768px) {
   .nav-toggle { display: block; }
   .nav-links { display: none; width: 100%; flex-direction: column; gap: 0.5rem; padding-top: 1rem; }

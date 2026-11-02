@@ -11,7 +11,6 @@ function salirALogin() {
   window.location.href = 'login.html';
 }
 
-// Pedido a la API con el token; si la sesión venció, vuelve al login
 async function api(url, opciones = {}) {
   const res = await fetch(url, {
     ...opciones,
@@ -39,7 +38,6 @@ function formatearFecha(fecha) {
   return new Date(fecha).toLocaleString('es-AR', { dateStyle: 'short', timeStyle: 'short' });
 }
 
-// ---------- Listado y filtros ----------
 const tbody = document.getElementById('tbodyConsultas');
 const contador = document.getElementById('contador');
 const filtroEstado = document.getElementById('filtroEstado');
@@ -77,7 +75,6 @@ async function cargarConsultas() {
   }
 }
 
-// Filtros: se recarga al cambiar; la búsqueda espera un instante mientras se escribe
 let temporizador;
 filtroEstado.addEventListener('change', cargarConsultas);
 filtroFecha.addEventListener('change', cargarConsultas);
@@ -93,7 +90,6 @@ document.getElementById('btnLimpiar').addEventListener('click', () => {
   cargarConsultas();
 });
 
-// ---------- Detalle ----------
 const modal = document.getElementById('modal');
 const btnToggle = document.getElementById('btnToggleLeida');
 let consultaActual = null;
@@ -152,10 +148,8 @@ document.getElementById('btnSalir').addEventListener('click', async () => {
   try {
     await api('/api/logout', { method: 'POST' });
   } catch (err) {
-    // si falla igual se cierra la sesión del lado del navegador
   }
   salirALogin();
 });
 
-// ---------- Inicio ----------
 cargarConsultas();
