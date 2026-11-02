@@ -1,11 +1,3 @@
--- ============================================================
--- Solvex - Base de datos del sitio web corporativo
--- Ejecutar desde phpMyAdmin (pestaña "Importar") o desde la
--- consola de MySQL. Deja la base lista para usar.
--- ATENCIÓN: si la base empresa_solvex ya existe, este archivo
--- elimina y recrea sus tablas (se pierden los datos actuales).
--- ============================================================
-
 CREATE DATABASE IF NOT EXISTS `empresa_solvex`
   DEFAULT CHARACTER SET utf8mb4
   COLLATE utf8mb4_unicode_ci;
@@ -18,10 +10,8 @@ DROP TABLE IF EXISTS `consultas`;
 DROP TABLE IF EXISTS `servicios`;
 DROP TABLE IF EXISTS `administradores`;
 
--- ------------------------------------------------------------
--- Tabla: administradores
--- La contraseña se guarda como hash SHA-256 (se compara con SHA2()).
--- ------------------------------------------------------------
+--Tabla: administradores
+--La contraseña se guarda como hash SHA-256 (se compara con SHA2()).
 CREATE TABLE `administradores` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `usuario` varchar(50) NOT NULL,
@@ -36,9 +26,6 @@ CREATE TABLE `administradores` (
 INSERT INTO `administradores` (`id`, `usuario`, `password_hash`, `nombre`) VALUES
 (1, 'admin', SHA2('admin123', 256), 'Administrador');
 
--- ------------------------------------------------------------
--- Tabla: servicios
--- ------------------------------------------------------------
 CREATE TABLE `servicios` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) NOT NULL,
@@ -55,9 +42,6 @@ INSERT INTO `servicios` (`id`, `nombre`, `descripcion`, `icono`, `precio`, `acti
 (3, 'Desarrollo web', 'Sitios web a medida, responsivos y administrables para tu negocio.', 'fa-code', 150000.00, 1),
 (4, 'Backups y seguridad', 'Resguardo de información y protección de tus equipos y datos.', 'fa-shield-halved', 35000.00, 1);
 
--- ------------------------------------------------------------
--- Tabla: consultas
--- ------------------------------------------------------------
 CREATE TABLE `consultas` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) NOT NULL,
@@ -81,6 +65,6 @@ CREATE TABLE `consultas` (
 
 -- Consultas de ejemplo
 INSERT INTO `consultas` (`id`, `nombre`, `email`, `telefono`, `asunto`, `mensaje`, `leida`, `fecha`, `id_servicio`, `leida_por`) VALUES
-(1, 'Lucía Fernández', 'lucia.fernandez@example.com', '2964 555123', 'Presupuesto para red de oficina', 'Hola, necesitamos instalar una red cableada e inalámbrica en una oficina de 8 puestos. ¿Podrían pasarme un presupuesto?', 1, '2026-10-28 14:15:00', 2, 1),
-(2, 'Martín Gómez', 'martin.gomez@example.com', NULL, 'Mi computadora no enciende', 'Buenas tardes, mi notebook dejó de encender desde ayer. ¿Pueden revisarla? Gracias.', 0, '2026-11-01 10:30:00', 1, NULL),
-(3, 'Carolina Ruiz', 'carolina.ruiz@example.com', '2964 555987', 'Sitio web para mi negocio', 'Quisiera una página web para mi local, con catálogo y formulario de contacto. ¿Cómo trabajan?', 0, '2026-11-02 09:00:00', 3, NULL);
+(1, 'Lucía Fernández', 'lucia@gmail.com', '2964 555123', 'Presupuesto para red de oficina', 'Hola, necesitamos instalar una red cableada e inalámbrica en una oficina de 8 puestos. ¿Podrían pasarme un presupuesto?', 1, '2026-10-28 14:15:00', 2, 1),
+(2, 'Martín Gómez', 'martin2008gomez@gmail.com', NULL, 'Mi computadora no enciende', 'Buenas tardes, mi notebook dejó de encender desde ayer. ¿Pueden revisarla? Gracias.', 0, '2026-11-01 10:30:00', 1, NULL),
+(3, 'Carolina Ruiz', 'carolinaf33@gmail.com.', '2964 555987', 'Sitio web para mi negocio', 'Quisiera una página web para mi local, con catálogo y formulario de contacto. ¿Cómo trabajan?', 0, '2026-11-02 09:00:00', 3, NULL);
