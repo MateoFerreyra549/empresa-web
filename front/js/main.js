@@ -1,4 +1,3 @@
-// ---------- Menú móvil ----------
 const navToggle = document.getElementById('navToggle');
 if (navToggle) {
   navToggle.addEventListener('click', () => {
