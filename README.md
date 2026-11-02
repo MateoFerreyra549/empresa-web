@@ -1,6 +1,6 @@
-Acreditacion Programacion IV.
+**Acreditacion Programacion IV.**
 
-Hice una página web para **Solvex**, la empresa de asistencia informática que armé para el TPI. Tiene las secciones Inicio, Nosotros, Servicios y Contacto. También cuenta con un panel de administración para ver y gestionar las consultas que envían los usuarios a través del formulario de contacto.
+Hice una página web para Solvex, la empresa de asistencia informática que armé para el TPI. Tiene las secciones Inicio, Nosotros, Servicios y Contacto. También cuenta con un panel de administración para ver y gestionar las consultas que envían los usuarios a través del formulario de contacto.
 
 ## Tecnologías utilizadas
 
@@ -34,9 +34,9 @@ Se puede acceder desde el enlace que aparece en la página o directamente desde:
 **Contraseña:** `admin123`
 
 ## Cómo funciona
-**Servicios:** se muestran los servicios guardados en la base de datos y cada uno tiene un botón para realizar una consulta.
-**Contacto:** permite enviar consultas mediante un formulario que valida los datos antes de guardarlos en MySQL.
-**Panel de administración:** permite iniciar sesión, ver las consultas, buscar y filtrar por estado, fecha o nombre/email, consultar los detalles y marcarlas como leídas o no leídas.
+Servicios: se muestran los servicios guardados en la base de datos y cada uno tiene un botón para realizar una consulta.
+Contacto: permite enviar consultas mediante un formulario que valida los datos antes de guardarlos en MySQL.
+Panel de administración: permite iniciar sesión, ver las consultas, buscar y filtrar por estado, fecha o nombre/email, consultar los detalles y marcarlas como leídas o no leídas.
 
 ## Rutas de la API
 
