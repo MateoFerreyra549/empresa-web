@@ -1,6 +1,4 @@
-# Solvex - Página web
-
-Proyecto de Programación IV (7mo año).
+Acreditacion Programacion IV.
 
 Hice una página web para **Solvex**, la empresa de asistencia informática que armé para el TPI. Tiene las secciones Inicio, Nosotros, Servicios y Contacto. También cuenta con un panel de administración para ver y gestionar las consultas que envían los usuarios a través del formulario de contacto.
 
@@ -42,7 +40,7 @@ Se puede acceder desde el enlace que aparece en la página o directamente desde:
 
 ## Rutas de la API
 
- `GET /api/servicios`: muestra los servicios.
+`GET /api/servicios`: muestra los servicios.
 `POST /api/consultas`: guarda una consulta.
 `POST /api/login`: inicia sesión.
 `POST /api/logout`: cierra la sesión.
