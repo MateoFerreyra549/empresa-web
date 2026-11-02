@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultas | Panel Solvex</title>
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+  <header class="header admin-header">
+    <nav class="nav">
+      <a href="panel.html" class="logo">
+        <img src="../img/logo-icono.png" alt="Logo de Solvex">
+        <span class="logo-panel">Panel de administración</span>
+      </a>
+      <div class="admin-acciones">
+        <span class="usuario" id="nombreAdmin"></span>
+        <button class="btn-salir" id="btnSalir">Cerrar sesión</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="seccion">
+    <div class="contenedor">
+      <h2>Consultas recibidas</h2>
+
+      <div class="filtros">
+        <div class="campo">
+          <label for="filtroEstado">Estado</label>
+          <select id="filtroEstado">
+            <option value="">Todas</option>
+            <option value="0">No leídas</option>
+            <option value="1">Leídas</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="filtroFecha">Fecha</label>
+          <input type="date" id="filtroFecha">
+        </div>
+        <div class="campo">
+          <label for="filtroBusqueda">Buscar por nombre o email</label>
+          <input type="text" id="filtroBusqueda" placeholder="Ej: juan">
+        </div>
+        <button class="btn btn-limpiar" id="btnLimpiar">Limpiar filtros</button>
+      </div>
+
+      <p class="contador" id="contador"></p>
+
+      <div class="tabla-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Asunto</th>
+              <th>Fecha</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyConsultas"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <!-- Detalle de una consulta -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal-contenido">
+      <button class="modal-cerrar" id="cerrarModal" aria-label="Cerrar">&times;</button>
+      <h2 id="detAsunto"></h2>
+      <p class="detalle-fila"><strong>Nombre:</strong> <span id="detNombre"></span></p>
+      <p class="detalle-fila"><strong>Email:</strong> <span id="detEmail"></span></p>
+      <p class="detalle-fila"><strong>Teléfono:</strong> <span id="detTelefono"></span></p>
+      <p class="detalle-fila"><strong>Servicio de interés:</strong> <span id="detServicio"></span></p>
+      <p class="detalle-fila"><strong>Fecha:</strong> <span id="detFecha"></span></p>
+      <p class="detalle-fila"><strong>Estado:</strong> <span id="detEstado"></span></p>
+      <div class="detalle-mensaje" id="detMensaje"></div>
+      <button class="btn btn-primario" id="btnToggleLeida"></button>
+    </div>
+  </div>
+
+  <script src="../js/panel.js"></script>
+</body>
+</html>
