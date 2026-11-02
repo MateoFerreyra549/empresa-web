@@ -5,7 +5,7 @@
 
 Este documento explica como hice el proyecto, las decisiones que tomé y algunos problemas que tuve durante el desarrollo y como los solucioné.
 
-## 1. Resumen del proyecto
+1. Resumen del proyecto
 
 Solvex es una pagina web de una empresa de asistencia informática. Tiene las secciones Inicio, Nosotros, Servicios y Contacto, además de un panel para administrar las consultas que envian los usuarios.
 
@@ -13,7 +13,7 @@ Solvex es una pagina web de una empresa de asistencia informática. Tiene las se
 **Backend:** Node.js y Express.
 **Base de datos:** MySQL con XAMPP.
 
-## 2. Decisiones técnicas
+2. Decisiones técnicas
 
 Use `createConnection` porque lo pedia la consigna.
 Use consultas parametrizadas para evitar problemas con la base de datos.
@@ -22,7 +22,7 @@ Las sesiones se guardan en memoria, por eso se pierden al reiniciar el servidor.
 Las contraseñas se guardan con SHA-256, aunque en el futuro se podria usar un metodo mas seguro.
 Las animaciones se hicieron con CSS y JavaScript, sin instalar otras librerias.
 
-## 3. Problemas que tuve
+3. Problemas que tuve
 
 **Node.js no funcionaba:** no estaba instalado en la notebook nueva. Lo instalé y volví a abrir VS Code.
 
@@ -38,7 +38,7 @@ Las animaciones se hicieron con CSS y JavaScript, sin instalar otras librerias.
 
 **Problemas con el login del administrador:** no podia acceder correctamente al panel y, al intentar iniciar sesión, no pasaba nada y no podia ver las consultas de los usuarios. Revisando los archivos encontré que algunos estaban nombrados como `login..js`, con dos puntos, en vez de `login.js`. Corregí el nombre y el login empezó a funcionar correctamente.
 
-## 4. Posibles mejoras
+4. Posibles mejoras
 Usar bcrypt para guardar las contraseñas de forma mas segura.
 Mejorar el sistema de sesiones.
 Agregar paginación a las consultas.
