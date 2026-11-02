@@ -7,14 +7,11 @@ const crypto = require('crypto');
 const app = express();
 const PORT = 3000;
 
-// ================== MIDDLEWARES ==================
 app.use(cors());
 app.use(express.json());
 // Sirve el frontend (carpeta "front") como archivos estáticos
 app.use(express.static(path.join(__dirname, '..', 'front')));
 
-// ================== CONEXIÓN A MYSQL ==================
-// Conexión simple y directa (createConnection), sin pool de conexiones
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -30,9 +27,7 @@ db.connect((err) => {
   console.log('Conectado a MySQL');
 });
 
-// ================== SERVICIOS (público) ==================
 
-// GET /api/servicios
 app.get('/api/servicios', (req, res) => {
   const sql = 'SELECT id, nombre, descripcion, icono, precio FROM servicios WHERE activo = 1';
   db.query(sql, (err, results) => {
@@ -41,15 +36,11 @@ app.get('/api/servicios', (req, res) => {
   });
 });
 
-// ================== CONSULTAS (público: enviar) ==================
-
 const REGEX_EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-// POST /api/consultas
 app.post('/api/consultas', (req, res) => {
   const { nombre, email, telefono, asunto, mensaje, id_servicio } = req.body;
 
-  // Validación en el servidor (no alcanza con validar solo en el navegador)
   if (!nombre || !email || !asunto || !mensaje) {
     return res.status(400).json({ error: 'Faltan campos obligatorios' });
   }
@@ -77,7 +68,6 @@ app.post('/api/consultas', (req, res) => {
   });
 });
 
-// ================== AUTENTICACIÓN ==================
 const sesiones = new Map(); // token -> datos del admin
 
 function verificarToken(req, res, next) {
@@ -89,7 +79,6 @@ function verificarToken(req, res, next) {
   next();
 }
 
-// POST /api/login
 app.post('/api/login', (req, res) => {
   const { usuario, password } = req.body;
   if (!usuario || !password) {
@@ -109,15 +98,12 @@ app.post('/api/login', (req, res) => {
   });
 });
 
-// POST /api/logout
 app.post('/api/logout', verificarToken, (req, res) => {
   sesiones.delete(req.token);
   res.json({ mensaje: 'Sesión cerrada' });
 });
 
-// ================== CONSULTAS (protegidas) ==================
 
-// GET /api/consultas?leida=0|1&fecha=AAAA-MM-DD&q=texto
 app.get('/api/consultas', verificarToken, (req, res) => {
   const { leida, fecha, q } = req.query;
   let sql = 'SELECT id, nombre, email, asunto, fecha, leida FROM consultas WHERE 1=1';
@@ -143,7 +129,7 @@ app.get('/api/consultas', verificarToken, (req, res) => {
   });
 });
 
-// GET /api/consultas/:id
+
 app.get('/api/consultas/:id', verificarToken, (req, res) => {
   const sql = `SELECT c.*, s.nombre AS servicio
                FROM consultas c
@@ -156,7 +142,6 @@ app.get('/api/consultas/:id', verificarToken, (req, res) => {
   });
 });
 
-// PATCH /api/consultas/:id/leida   body: { "leida": true }
 app.patch('/api/consultas/:id/leida', verificarToken, (req, res) => {
   const leida = req.body.leida ? 1 : 0;
   const leidaPor = leida ? req.admin.id : null;
