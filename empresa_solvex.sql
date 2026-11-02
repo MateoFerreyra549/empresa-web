@@ -10,8 +10,6 @@ DROP TABLE IF EXISTS `consultas`;
 DROP TABLE IF EXISTS `servicios`;
 DROP TABLE IF EXISTS `administradores`;
 
---Tabla: administradores
---La contraseña se guarda como hash SHA-256 (se compara con SHA2()).
 CREATE TABLE `administradores` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `usuario` varchar(50) NOT NULL,
