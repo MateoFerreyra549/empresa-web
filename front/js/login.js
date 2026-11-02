@@ -1,7 +1,6 @@
 const form = document.getElementById('formLogin');
 const mensaje = document.getElementById('mensaje');
 
-// Si ya hay sesión iniciada, ir directo al panel
 if (sessionStorage.getItem('token')) {
   window.location.href = 'panel.html';
 }

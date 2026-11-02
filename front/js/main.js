@@ -6,7 +6,6 @@ if (navToggle) {
   });
 }
 
-// Evita que el contenido de la base de datos se interprete como HTML
 function escaparHTML(texto) {
   const div = document.createElement('div');
   div.textContent = texto ?? '';
@@ -57,7 +56,6 @@ async function cargarSelectServicios() {
     const elegido = new URLSearchParams(window.location.search).get('servicio');
     if (elegido) select.value = elegido;
   } catch (err) {
-    // si falla, el campo es opcional: se deja solo la opción por defecto
   }
 }
 

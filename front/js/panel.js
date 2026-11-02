@@ -143,7 +143,6 @@ document.getElementById('cerrarModal').addEventListener('click', cerrarModal);
 modal.addEventListener('click', (e) => { if (e.target === modal) cerrarModal(); });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') cerrarModal(); });
 
-// ---------- Cerrar sesión ----------
 document.getElementById('btnSalir').addEventListener('click', async () => {
   try {
     await api('/api/logout', { method: 'POST' });
