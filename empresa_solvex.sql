@@ -22,7 +22,7 @@ CREATE TABLE `administradores` (
 
 -- Usuario de prueba: admin / admin123
 INSERT INTO `administradores` (`id`, `usuario`, `password_hash`, `nombre`) VALUES
-(1, 'admin', SHA2('admin123', 256), 'Administrador');
+(1, 'admin', SHA2('mateo99', 256), 'Administrador');
 
 CREATE TABLE `servicios` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
